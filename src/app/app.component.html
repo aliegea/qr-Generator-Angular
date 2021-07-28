@@ -1,0 +1,73 @@
+<div class="container fluid d-flex-column justify-content-center">
+  <h1 class="d-flex justify-content-center mx-auto mt-5">
+    Free QR code Generator
+  </h1>
+
+  <div class="d-flex justify-content-center m-4">
+    <qr-code
+      [value]="values"
+      [size]="width"
+      [level]="level"
+      [background]="background"
+    ></qr-code>
+  </div>
+
+  <h5 class="d-flex justify-content-center mt-4">Change Name</h5>
+  <div class="d-flex justify-content-center w-50 mx-auto">
+    <input
+      class="form-control me-2"
+      [(ngModel)]="values"
+      placeholder="Your name"
+    />
+  </div>
+  <br />
+  <div class="d-flex justify-content-center w-75 mx-auto">
+    <h5 class="mx-auto">Change background color</h5>
+  </div>
+  <div class="d-flex justify-content-center w-75 mx-auto">
+    <div class="btn-group" role="group">
+      <button class="btn btn-outline-dark" (click)="qrBackground('WHITE')">
+        WHITE
+      </button>
+      <button class="btn btn-primary" (click)="qrBackground('BLUE')">
+        BLUE
+      </button>
+      <button class="btn btn-warning" (click)="qrBackground('YELLOW')">
+        YELLOW
+      </button>
+    </div>
+  </div>
+
+  <br />
+  <div class="d-flex justify-content-center w-75 mx-auto">
+    <h5 class="mx-auto">Change Width</h5>
+  </div>
+  <div class="d-flex justify-content-center w-75 mx-auto">
+    <div class="btn-group mx-4" role="group">
+      <button class="btn btn-outline-success" (click)="qrWidth(550)">
+        550
+      </button>
+      <button class="btn btn-outline-success" (click)="qrWidth(450)">
+        450
+      </button>
+      <button class="btn btn-outline-success" (click)="qrWidth(350)">
+        350
+      </button>
+      <button class="btn btn-outline-success" (click)="qrWidth(250)">
+        250
+      </button>
+    </div>
+  </div>
+  <br />
+  <div class="d-flex justify-content-center w-75 mx-auto">
+    <h5 class="mx-auto">Change Level</h5>
+  </div>
+  <div class="d-flex justify-content-center w-75 mx-auto">
+    <div class="btn-group mx-4" role="group">
+      <button class="btn btn-outline-danger" (click)="qrLevel('L')">L</button>
+      <button class="btn btn-outline-danger" (click)="qrLevel('M')">M</button>
+      <button class="btn btn-outline-danger" (click)="qrLevel('Q')">Q</button>
+      <button class="btn btn-outline-danger" (click)="qrLevel('H')">H</button>
+    </div>
+  </div>
+</div>
