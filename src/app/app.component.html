@@ -12,62 +12,132 @@
     ></qr-code>
   </div>
 
-  <h5 class="d-flex justify-content-center mt-4">Change Name</h5>
-  <div class="d-flex justify-content-center w-50 mx-auto">
+  <h5 class="d-flex justify-content-center mt-4">Enter your contact Details</h5>
+  <form class="d-flex-column justify-content-center w-50 mx-auto">
+    <div class="d-flex justify-content-center w-50 mx-auto">
+      <input
+        class="form-control me-2"
+        [(ngModel)]="values"
+        placeholder="Your name"
+      />
+    </div>
+    <!-- <form class="d-flex-column justify-content-center w-50 mx-auto">
+    <label for="name" class="visually-hidden">Name</label>
     <input
-      class="form-control me-2"
-      [(ngModel)]="values"
-      placeholder="Your name"
+      type="text"
+      id="inputName"
+      class="form-control"
+      name="nombre"
+      [(ngModel)]="data.name"
+      placeholder="Name"
+      required
+      autofocus
     />
-  </div>
-  <br />
-  <div class="d-flex justify-content-center w-75 mx-auto">
-    <h5 class="mx-auto">Change background color</h5>
-  </div>
-  <div class="d-flex justify-content-center w-75 mx-auto">
-    <div class="btn-group" role="group">
-      <button class="btn btn-outline-dark" (click)="qrBackground('WHITE')">
-        WHITE
-      </button>
-      <button class="btn btn-primary" (click)="qrBackground('BLUE')">
-        BLUE
-      </button>
-      <button class="btn btn-warning" (click)="qrBackground('YELLOW')">
-        YELLOW
-      </button>
-    </div>
-  </div>
+    <br />
+    <label for="Surname" class="visually-hidden">Surname</label>
+    <input
+      type="text"
+      id="inputSurname"
+      class="form-control"
+      name="surname"
+      [(ngModel)]="data.surname"
+      placeholder="Surname"
+      required
+      autofocus
+    />
+    <br />
+    <label for="Email" class="visually-hidden">Email</label>
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      name="email"
+      [(ngModel)]="data.email"
+      placeholder="Email"
+      autocomplete="email"
+      required
+      autofocus
+    />
+    <br />
+    <label for="phone" class="visually-hidden">Phone Number</label>
+    <input
+      type="text"
+      id="inputPhone"
+      class="form-control"
+      name="phone"
+      [(ngModel)]="data.phone"
+      placeholder="Your phone number"
+      required
+    />
+    <br />
+    <label for="homepage" class="visually-hidden"
+      >Add your homepage(optional)</label
+    >
+    <input
+      type="url"
+      id="homepage"
+      name="homepage"
+      class="form-control"
+      name="web"
+      [(ngModel)]="data.web"
+      placeholder="Your homepage(optional)"
+    /> -->
+    <br />
+    <div class="form-control">
+      <label for="btngroup1" class="form-label d-flex justify-content-center"
+        >Change background color</label
+      >
+      <div class="btn-group d-flex mx-auto" role="group">
+        <button class="btn btn-outline-dark" (click)="qrBackground('WHITE')">
+          WHITE
+        </button>
+        <button class="btn btn-outline-primary" (click)="qrBackground('BLUE')">
+          BLUE
+        </button>
+        <button
+          class="btn btn-outline-warning"
+          (click)="qrBackground('YELLOW')"
+        >
+          YELLOW
+        </button>
+      </div>
+      <br />
+      <label for="btngroup2" class="form-label d-flex justify-content-center"
+        >Change Width</label
+      >
+      <div class="btn-group d-flex mx-4" role="group">
+        <button class="btn btn-outline-secondary" (click)="qrWidth(550)">
+          550
+        </button>
+        <button class="btn btn-outline-secondary" (click)="qrWidth(450)">
+          450
+        </button>
+        <button class="btn btn-outline-secondary" (click)="qrWidth(350)">
+          350
+        </button>
+        <button class="btn btn-secondary" (click)="qrWidth(250)">250</button>
+      </div>
 
-  <br />
-  <div class="d-flex justify-content-center w-75 mx-auto">
-    <h5 class="mx-auto">Change Width</h5>
-  </div>
-  <div class="d-flex justify-content-center w-75 mx-auto">
-    <div class="btn-group mx-4" role="group">
-      <button class="btn btn-outline-success" (click)="qrWidth(550)">
-        550
-      </button>
-      <button class="btn btn-outline-success" (click)="qrWidth(450)">
-        450
-      </button>
-      <button class="btn btn-outline-success" (click)="qrWidth(350)">
-        350
-      </button>
-      <button class="btn btn-outline-success" (click)="qrWidth(250)">
-        250
-      </button>
+      <br />
+      <label for="btngroup3" class="form-label d-flex justify-content-center"
+        >Change Level</label
+      >
+      <div class="btn-group d-flex mx-4 mb-3" role="group">
+        <button class="btn btn-secondary" (click)="qrLevel('L')">L</button>
+        <button class="btn btn-outline-secondary" (click)="qrLevel('M')">
+          M
+        </button>
+        <button class="btn btn-outline-secondary" (click)="qrLevel('Q')">
+          Q
+        </button>
+        <button class="btn btn-outline-secondary" (click)="qrLevel('H')">
+          H
+        </button>
+      </div>
     </div>
-  </div>
-  <br />
-  <div class="d-flex justify-content-center w-75 mx-auto">
-    <h5 class="mx-auto">Change Level</h5>
-  </div>
-  <div class="d-flex justify-content-center w-75 mx-auto">
-    <div class="btn-group mx-4" role="group">
-      <button class="btn btn-outline-danger" (click)="qrLevel('L')">L</button>
-      <button class="btn btn-outline-danger" (click)="qrLevel('M')">M</button>
-      <button class="btn btn-outline-danger" (click)="qrLevel('Q')">Q</button>
-      <button class="btn btn-outline-danger" (click)="qrLevel('H')">H</button>
-    </div>
-  </div>
+    <br />
+    <button class="btn btn-lg btn-success" (click)="qrData('customer Details')">
+      Generate QR Code
+    </button>
+  </form>
 </div>
