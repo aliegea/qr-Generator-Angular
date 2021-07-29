@@ -1,3 +1,4 @@
+import { dashCaseToCamelCase } from "@angular/compiler/src/util";
 import { Component } from "@angular/core";
 
 interface Datos {
@@ -20,10 +21,10 @@ export class AppComponent {
   public width: number;
   public background: string;
   public data: Datos = {
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
+    name: "Elena",
+    surname: "Polo",
+    email: "poloe@yahoo.com",
+    phone: "654839202",
     web: "",
   };
   constructor() {
@@ -38,7 +39,24 @@ export class AppComponent {
   }
 
   qrData(val: string) {
-    this.values = val;
+    let cliente = this.data;
+    let clienteStr = JSON.stringify(this.data);
+    this.codes.push({
+      name: cliente.name,
+      surname: cliente.surname,
+      email: cliente.email,
+      phone: cliente.phone,
+      web: cliente.web,
+    });
+    let i: number;
+    for (i = 0; i < this.codes.length; i++) {
+      if (i == this.codes.length - 1) {
+        clienteStr = JSON.stringify(this.codes[i]);
+        this.values = clienteStr;
+        val = clienteStr;
+        console.log(val);
+      }
+    }
   }
 
   qrWidth(val: number) {
